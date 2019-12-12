@@ -5,6 +5,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'modals', loadChildren: './modals/modals.module#ModalsPageModule' },
+  { path: 'rideshare', loadChildren: './rideshare/rideshare.module#RidesharePageModule' },
 ];
 
 @NgModule({

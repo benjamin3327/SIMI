@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>Map</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="body" style="background:url(assets/background.png);">
+    <div class="map-wrapper">
+      <div id="map_center">
+      <!--  <img src="assets/center_marker.png" />  -->
+      </div>
+      <div #map id="map"></div>
+    </div>
+  </div> 
+  <div class="buttons">
+    <ion-button (click)="loadMap()" shape="round" fill="outline" color="tertiary">
+      <ion-icon slot="start" name="locate"></ion-icon>
+        Where Am I
+    </ion-button>
+    <ion-button (click)="closeModal()" shape="round" fill="outline" color="tertiary">
+      <ion-icon slot="start" name="close"></ion-icon>
+        Close
+    </ion-button>
+  </div>
+  <div id="address">
+    <span>{{address}}</span>
+  </div> 
+</ion-content>

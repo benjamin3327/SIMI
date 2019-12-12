@@ -11,9 +11,9 @@
     <ion-row>
       <ion-col text-start padding-top></ion-col>  
       <ion-col text-end>
-        <ion-button (click)="loadMap()" shape="round" fill="outline" color="tertiary">
+        <ion-button (click)="showModal()" shape="round" fill="outline" color="tertiary">
           <ion-icon slot="start" name="locate"></ion-icon>
-            Where Am I
+           LOCATION
         </ion-button>
       </ion-col>
     </ion-row>  
@@ -41,16 +41,11 @@
   </div>
   <div class= "text" style="background:url(assets/background.png);">
     Powered by Team SIMI  Kwasu 19/20
+  <!--  <ion-button (click)="textToSpeech()" shape="round" fill="outline" color="tertiary">
+      <ion-icon slot="start" name="fa-microphone"></ion-icon>
+        Speak
+    </ion-button>   -->
   </div>
-  <div class="map-wrapper">
-    <div id="map_center">
-      <img src="assets/center_marker.png" />  
-    </div>
-    <div #map id="map"></div>
-  </div>
-  <div id="address">
-    <span>{{address}}</span>
-  </div>   
 </ion-content>
 <ion-footer>
   <p text-center *ngIf="sending">sending...</p>
