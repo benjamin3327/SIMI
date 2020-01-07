@@ -1,8 +1,5 @@
 <ion-header>
-  <ion-toolbar color="danger">
-    <ion-menu>
-      
-    </ion-menu>
+  <ion-toolbar color="teal">
     <ion-title> 
       <img src= "assets/simi.png" class="img">
         Simi<br>
@@ -11,17 +8,16 @@
     <ion-row>
       <ion-col text-start padding-top></ion-col>  
       <ion-col text-end>
-        <ion-button (click)="showModal()" shape="round" fill="outline" color="tertiary">
-          <ion-icon slot="start" name="locate"></ion-icon>
-           LOCATION
+        <ion-button (click)="rideShare()" shape="round" fill="clear" color="light">
+          <ion-icon slot="start" name="more"></ion-icon>
         </ion-button>
       </ion-col>
-    </ion-row>  
+    </ion-row>     
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="chats" style="background:url(assets/background.png);">
+  <div class="chats" style="background:url(assets/background3.jpg);">
     <div class="chatboard">
       <div *ngFor="let chat of chats">
         <div class="sent message" *ngIf="chat.type!=='bot' && chat.isMe">
@@ -39,21 +35,26 @@
       </div>
     </div>
   </div>
-  <div class= "text" style="background:url(assets/background.png);">
+ <!--  <div class= "text" style="background:url(assets/background2.jpg);">
     Powered by Team SIMI  Kwasu 19/20
-  <!--  <ion-button (click)="textToSpeech()" shape="round" fill="outline" color="tertiary">
+   <ion-button (click)="textToSpeech()" shape="round" fill="outline" color="tertiary">
       <ion-icon slot="start" name="fa-microphone"></ion-icon>
         Speak
-    </ion-button>   -->
-  </div>
+    </ion-button>
+  </div>     -->
 </ion-content>
 <ion-footer>
   <p text-center *ngIf="sending">sending...</p>
   <div class="flex-items"> 
     <!--<span class='input-username'><i class='fa fa-microphone'></i></span>-->
-    <ion-input [(ngModel)]="message" name="message" class="input_message" placeholder="sending...!!" ></ion-input>
+    <ion-input [(ngModel)]="message" name="message" class="input_message" placeholder="Type a message..." ></ion-input>
+    <div class="location">
+      <ion-button (click)="showModal()" shape="round" fill="clear" color="light">
+        <ion-icon color="teal" slot="start" name="locate"></ion-icon>
+      </ion-button>
+    </div>
     <div class="btn">
-      <ion-button shape="round" color="danger" (click)="sendMessage()"  fill="solid">
+      <ion-button shape="round" color="teal" (click)="sendMessage()"  fill="solid">
         <ion-icon class="send" name="send"></ion-icon>
       </ion-button>  
     </div>

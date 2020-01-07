@@ -7,8 +7,8 @@ import { map } from 'rxjs/operators';
 import { ModalController, NavController } from '@ionic/angular';
 
 import { TextToSpeech} from '@ionic-native/text-to-speech/ngx';
-import { ModalsPage } from '../Modal/modals/modals.page';
-import { RidesharePage } from '../Modal/rideshare/rideshare.page';
+import { ModalsPage } from '../modals/modals.page';
+import { RidesharePage } from '../rideshare/rideshare.page';
 
 @Component({
   selector: 'app-home',
@@ -21,12 +21,10 @@ export class HomePage implements OnInit {
   chats: IChat[] = [];
   message: string;
   sending: boolean;
-  
-  constructor(private _chat: ChatService, 
+  constructor(private _chat: ChatService,
               public modalCtrl: ModalController,
               public navCtrl: NavController,
               private tts: TextToSpeech) {}
-  
   ngOnInit() {
      // subscribe to pusher's event
      this._chat.getChannel().bind('chat', data => {
@@ -49,7 +47,7 @@ export class HomePage implements OnInit {
   sendMessage() {
     this.sending = true;
     this._chat.sendMessage(this.message)
-    .pipe(map(res => res.json()))
+    //.pipe(map(res => res.json()))
       .subscribe(_res => {
         this.message = '';
         this.sending = false;
