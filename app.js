@@ -1,4 +1,4 @@
-  // server.js
+  // app.js
 
     const express = require('express')
     const bodyParser = require('body-parser')
