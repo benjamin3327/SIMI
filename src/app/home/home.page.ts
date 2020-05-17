@@ -10,6 +10,7 @@ import { TextToSpeech} from '@ionic-native/text-to-speech/ngx';
 import { ModalsPage } from '../modals/modals.page';
 import { RidesharePage } from '../rideshare/rideshare.page';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -24,7 +25,9 @@ export class HomePage implements OnInit {
   constructor(private _chat: ChatService,
               public modalCtrl: ModalController,
               public navCtrl: NavController,
-              private tts: TextToSpeech) {}
+              private tts: TextToSpeech,
+              )
+              {}
   ngOnInit() {
      // subscribe to pusher's event
      this._chat.getChannel().bind('chat', data => {
@@ -41,7 +44,7 @@ export class HomePage implements OnInit {
       rate: 0.75
     }) */
      .then(() => console.log('Success'))
-     .catch((reason:any) =>console.log(reason));
+     .catch((reason: any) => console.log(reason));
   }
 
   sendMessage() {

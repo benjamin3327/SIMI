@@ -14,6 +14,10 @@ export class RidesharePage implements OnInit {
   ngOnInit() {
   }
 
+  book() {
+    window.open('https://play.google.com/store/apps/details?id=team.opay.pay', '_system', 'location=yes'); return false;
+  }
+
   async closeModal() {
     await this.modalCtrl.dismiss({
       'dismissed' : true
