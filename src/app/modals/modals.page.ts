@@ -52,7 +52,7 @@ export class ModalsPage implements OnInit {
        });
   
      }).catch((error) => {
-       console.log('Error getting location', error);
+       console.log('Error getting locations', error);
      });
    }
    
