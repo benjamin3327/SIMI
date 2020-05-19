@@ -2,15 +2,19 @@ import { Injectable } from '@angular/core';
 import { PusherService } from './pusher.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Http, Headers, RequestOptions } from '@angular/http';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChatService {
+  
+  ionViewDidLoad() {
+    const headers = new Headers();
+   }
 
-
-  private _url = 'http://localhost:8080';
+  private _url = 'https://simi-server.herokuapp.com';
 
   private _channel: any;
 
@@ -19,6 +23,11 @@ export class ChatService {
   }
 
   public sendMessage( message: string): Observable<any> {
+    const headers = new Headers();
+    headers.append('Accept', 'application/json');
+    headers.append('Content-Type', 'application/json' );
+    const requestOptions = new RequestOptions({ headers });
+    
     const param = {
       type: 'human',
       message,
